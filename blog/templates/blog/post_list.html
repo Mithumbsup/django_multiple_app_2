@@ -1,0 +1,16 @@
+<html>
+{% extends 'base.html'%}
+{% block content %}
+{% if posts%}
+
+{% for post in posts %} 
+    <ul>
+        <li><a href="{% url 'blog:post_read' post.pk %}">{{post.title}}</a></li>
+    </ul>
+{% endfor %}
+
+{% else %}
+<p>There are no posts in misun's library.</p>
+{% endif %}
+{% endblock %}
+</html>

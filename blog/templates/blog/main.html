@@ -1,0 +1,9 @@
+
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>안녕하세요 멋쟁이사자 7기 김미선입니다.</h1>
+
+<a href="{% url 'blog:post_create'%}">post 올리기</a>
+<a href="{% url 'blog:post_list'%}">post 보기</a>
+{% endblock %}

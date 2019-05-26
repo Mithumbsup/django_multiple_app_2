@@ -1,0 +1,23 @@
+{% extends "portfolio.html" %}
+
+{% load staticfiles %}
+
+{% block main %}
+<h2>{{ post.title }}</h2>
+<form method='post' action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit">
+</form>
+<a id="id_uploaded_file" href="{ uploadFileModel.file.url }" download>{ uploadFileModel.file.name }</a>
+
+
+{% if post.photo %}
+path :{{ post.photo.path }} # /Users/nickname/documents/practice/media/jeju_pic.png
+url : {{ post.photo.url }} # /media/jeju_pic.png
+<img src="{{ post.photo.url }}" alt="">
+{% endif %}
+
+{% endblock %}
